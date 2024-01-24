@@ -1,5 +1,5 @@
 // Question 1
-let question1 = prompt('Am I tall? (y/n)');
+let question1 = prompt('Do I have a Balkan Heritage? (y/n)');
 let answer1 = 'y';
 
 if (question1 === 'y')  {
@@ -22,7 +22,7 @@ if (question2 === 'y')  {
 }
 
 // Question 3
-let question3 = prompt('Do I take the bus to my coding bootcamp? (y/n)');
+let question3 = prompt('Am I unemployed at the moment? (y/n)');
 let answer3 = 'y';
 
 if (question3 === 'y')  {
