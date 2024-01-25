@@ -37,3 +37,17 @@ header {
     padding: 50px;
     /* margin: 15px 0; */
   }
+
+#startButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+#startButton:hover {
+    background-color: yellow;
+}
