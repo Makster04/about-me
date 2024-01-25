@@ -1,102 +1,93 @@
-function buttonGame() {
-    let userName = "Welcome welcome! What do you call yourself?!";
-    let user = prompt(userName);
-    let answerString1 = "Whatsupp " + user + "! Do you know anything about me?!";
-    alert(answerString1);
-    let userConfirmed;
-    do {
-        userConfirmed = prompt("Are you readdyyyyyyyyy? (y/n)");
-        userConfirmed = userConfirmed ? userConfirmed.toLowerCase() : "";
-    } while (userConfirmed !== "y" && userConfirmed !== "n");
-    if (userConfirmed !== "y") {
-        alert("Aight, see you later?");
-        return;
-    }
-    let questions = [
-        "What month was I born?",
-        "What college did I go to (2 letter abbreviation)?",
-        "How old was I in 2009?",
-        "Which city do I live in?",
-        "Which map region is my family from?",
-        "Who is my favorite Basketball Player?"
-    ];
-    let correctAnswers = [
-        "april",
-        "UW",
-        "11",
-        "bellevue",
-        "balkans",
-        "Nikola Jokic"
-    ];
-    let answerChoices = [
-        ["april"],
-        ["UW"],
-        ["11"],
-        ["bellevue"],
-        Array.from({ length: 11 }, (_, i) => (i + 15).toString()),
-        ["Nikola Jokic", "Shai Gilgeous-Alexander", "Tyrese Haliburton", "LeBron James", "Luka Doncic", "DeArron Fox", "Alperen Sengun", "Victor Wembanyama", "Kawhi Leonard", "Anthony Edwards"]
-    ];
-    let correctCount = 0;
-    let wrongCount = 0;
-    for (let i = 0; i < questions.length; i++) {
-        let userAnswer = prompt(questions[i]);
-        let lowercasedAnswer = userAnswer.toLowerCase();
-        let correctAnswer = correctAnswers[i].toLowerCase();
-        if (i === 4) {
-            // Numeric Validation
-            let userGuessNumber = parseInt(userAnswer);
-            if (isNaN(userGuessNumber)) {
-                alert("Please enter a valid number.");
-                break;
-            }
-            let favoriteNumber = 7;
-            let remainingTriesNumber = 4;
-            while (remainingTriesNumber > 0) {
-                if (userGuessNumber === favoriteNumber) {
-                    alert("CORRECT!");
-                    correctCount++;
-                    break;
-                } else {
-                    remainingTriesNumber--;
-                    alert("WRONG! " + remainingTriesNumber + " tries left.");
-                    if (remainingTriesNumber > 0) {
-                        userAnswer = prompt(questions[i]);
-                        userGuessNumber = parseInt(userAnswer);
-                    }
-                }
-            }
-        } else if (i === 5) {
-            // Nickname Comparison in Question 5
-            let remainingTriesNickname = 6;
-            while (remainingTriesNickname > 0) {
-                let userGuessNickname = prompt(
-                    questions[i] + "\nAvailable choices: " + answerChoices[i].join(", ")
-                );
-                if (!answerChoices[i].includes(userGuessNickname)) {
-                    alert("Invalid choice. Please choose from the available options.");
-                    continue;
-                }
-                if (userGuessNickname.toLowerCase() === correctAnswer) {
-                    alert("Yay, you guessed correctly!");
-                    correctCount++;
-                    break;
-                } else {
-                    remainingTriesNickname--;
-                    alert("WRONGGGG! You have " + remainingTriesNickname + " tries left.");
-                    answerChoices[i] = answerChoices[i].filter(choice => choice !== userGuessNickname);
-                }
-            }
-        } else {
-            if (lowercasedAnswer === correctAnswer) {
-                let confirmation = "Give me a high five " + user + ", You nailed it!!";
-                alert(confirmation);
-                correctCount++;
-            } else {
-                alert("Better luck on the next one :(" + user + "");
-                wrongCount++;
-            }
-        }
-    }
-    let finalMessage = "Thanks for giving it a go, " + user + "!\nYou got " + correctCount + " right and " + wrongCount + " wrong!!!";
-    alert(finalMessage);
+let question1 = prompt('Am I taller than 6ft?'); 
+let answer1 = 'yes';
+
+if (question1 === 'yes') {
+    console.log('yes'); 
+} else {
+    alert('Im not that short');
+    console.log('wrong'); 
 }
+
+
+let question2 = prompt('Am I married?');
+let answer2 = 'yes';
+
+if (question2 === 'yes') {
+    console.log('yes'); 
+} else {
+    alert('Not yet sadly');
+    console.log('wrong'); 
+}
+
+
+let question3 = prompt('Was I raised in Washington?'); 
+let answer3 = 'yes';
+
+if (question3 === 'yes') {
+    console.log('yes'); 
+} else {
+    alert('Yes I was!');
+    console.log('wrong'); 
+}
+
+let question4 = prompt('Did I go to UW?'); 
+let answer4 = 'yes'; 
+
+if (question4 === 'yes') {
+    console.log('yes'); 
+} else {
+    alert('I did!');
+    console.log('wrong'); 
+}
+
+let question5 = prompt('Was I born in April?');
+let answer5 = 'yes'; 
+
+if (question5 === 'yes') {
+    console.log('yes'); 
+} else {
+    alert('I was!');
+    console.log('wrong'); 
+}
+
+
+let question6 = prompt('What is your name?');
+document.write('<p>Hello! '+ question6 + '</p>');
+
+//end part 1
+
+let userNumberGuess = prompt('How old am I?');
+let correctNumber = 25;
+
+if (userNumberGuess > correctNumber) {
+    alert('Too Old');
+  } else if (userNumberGuess < correctNumber) {
+    alert('Too Young');
+  } else {
+    alert('Bingo!');
+  }
+//need to finish 
+
+
+//this is part 3
+const possibleAnswers = ["pho", "curry", "hot pot", "korean bbq"];
+const maxAttempts = 6;
+let attempts = 0;
+
+while (attempts < maxAttempts) {
+  const userGuess = prompt("guess my favorite NBA player");
+
+  if (possibleAnswers.includes(userGuess)) {
+    alert("He is up there!");
+    break;
+  } else {
+    alert('Probably not!');
+  }
+
+  attempts++;
+}
+if (attempts === maxAttempts) {
+  alert('sorry! You failed!'); 
+}
+
+//part 4
