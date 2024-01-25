@@ -1,93 +1,91 @@
-let question1 = prompt('Am I taller than 6ft?'); 
-let answer1 = 'yes';
+<button id="startButton">Wanna guess me?</button>
+  'use strict';
 
-if (question1 === 'yes') {
-    console.log('yes'); 
-} else {
-    alert('Im not that short');
-    console.log('wrong'); 
-}
-
-
-let question2 = prompt('Am I married?');
-let answer2 = 'yes';
-
-if (question2 === 'yes') {
-    console.log('yes'); 
-} else {
-    alert('Not yet sadly');
-    console.log('wrong'); 
-}
-
-
-let question3 = prompt('Was I raised in Washington?'); 
-let answer3 = 'yes';
-
-if (question3 === 'yes') {
-    console.log('yes'); 
-} else {
-    alert('Yes I was!');
-    console.log('wrong'); 
-}
-
-let question4 = prompt('Did I go to UW?'); 
-let answer4 = 'yes'; 
-
-if (question4 === 'yes') {
-    console.log('yes'); 
-} else {
-    alert('I did!');
-    console.log('wrong'); 
-}
-
-let question5 = prompt('Was I born in April?');
-let answer5 = 'yes'; 
-
-if (question5 === 'yes') {
-    console.log('yes'); 
-} else {
-    alert('I was!');
-    console.log('wrong'); 
-}
-
-
-let question6 = prompt('What is your name?');
-document.write('<p>Hello! '+ question6 + '</p>');
-
-//end part 1
-
-let userNumberGuess = prompt('How old am I?');
-let correctNumber = 25;
-
-if (userNumberGuess > correctNumber) {
-    alert('Too Old');
-  } else if (userNumberGuess < correctNumber) {
-    alert('Too Young');
-  } else {
-    alert('Bingo!');
-  }
-//need to finish 
-
-
-//this is part 3
-const possibleAnswers = ["pho", "curry", "hot pot", "korean bbq"];
-const maxAttempts = 6;
-let attempts = 0;
-
-while (attempts < maxAttempts) {
-  const userGuess = prompt("guess my favorite NBA player");
-
-  if (possibleAnswers.includes(userGuess)) {
-    alert("He is up there!");
-    break;
-  } else {
-    alert('Probably not!');
+  function YesNo(question) {
+      let answer;
+      do {
+          answer = prompt(question).toLowerCase();
+      } while (answer !== 'y' && answer !== 'yes' && answer !== 'n' && answer !== 'no');
+      return answer === 'y' || answer === 'yes';
   }
 
-  attempts++;
-}
-if (attempts === maxAttempts) {
-  alert('sorry! You failed!'); 
-}
+  function askNumericQuestion(question, correctanswer) {
+      let attempts = 5;
+      let guess;
+      do {
+          guess = parseInt(prompt(question));
+          if (guess === 7) {
+              alert("Correct!");
+              return true;
+          } else if (guess < 7) {
+              alert("Too small!");
+          } else {
+              alert("Too big!");
+          }
+          attempts--;
+      } while (attempts > 0);
 
-//part 4
+      alert(`Sir, the correct answer is ${7}.`);
+      return false;
+  }
+
+  function MultiChoice(question, correctAnswers) {
+      let attempts = 5;
+      let guess;
+      do {
+          guess = prompt(question).toLowerCase();
+          if (correctAnswers.includes('Armenia', 'Georgia', 'Montenegro', 'Bosnia','Morocco', 'Turkey', 'Hungary', 'Czech Republic', 'Costa Rica', 'Thailand')) { 
+              alert("Correct!");
+              return true;
+          }
+          attempts--;
+      } while (attempts > 0);
+
+      alert(`Yeah you got it: ${correctAnswers.join(', ')}.`);
+      return false;
+  }
+
+  function StartGame() {
+      let userName = prompt('What is your name?');
+      alert(`Ready to try out my about game ${userName}?`);
+
+      let questions = [
+          'Did I go to UW? (yes/no)',
+          'Do I love to Travel? (yes/no)',
+          'Am I younger than 25? (yes/no)',
+          'Did I study coding in college? (yes/no)',
+          'Was I a Behavior Technican? (yes/no)'
+      ];
+      let correctAnswers = [
+        'yes', 
+        'yes', 
+        'no', 
+        'no', 
+        'yes'
+    ];
+      let score = 0;
+
+      for (let i = 0; i < questions.length; i++) {
+          let userAnswer = askYesNoQuestion(questions[i]);
+
+          if (userAnswer === (correctAnswers[i] === 'yes')) {
+              alert('You Got It!');
+              score++;
+          } else {
+              alert('Good Try!');
+          }
+      }
+
+      if (askNumericQuestion("Guess my favorite number between 1 and 10", 7)) {
+          score++;
+      }
+
+      let possibleAnswers = ['Armenia', 'Georgia', 'Montenegro', 'Bosnia','Morocco', 'Turkey', 'Hungary', 'Czech Republic', 'Costa Rica', 'Thailand']; 
+      if (askMultipleChoiceQuestion("Which country did I find unique to vist?", possibleAnswers)) {
+          score++;
+      }
+
+      alert(`${userName}, your final score is ${score} out of 7.`);
+  }
+
+  document.getElementById('startButton').onclick = startGame;
