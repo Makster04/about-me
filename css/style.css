@@ -3,14 +3,26 @@ header {
     margin-top: 20px;
     text-align: center;
   }
-  
+
   h1 {
     font-size: 2em; /* Adjust the size as needed */
+    background-color: blueviolet;
 }
+
+  ol {
+    background-color: yellow;
+  }
+
+  ul {
+    background-color: yellow;
+  }
+
   main {
     margin: 40px;
   }
-  
+ p {
+  font-size: large;
+ }
   /* body {
     background-color: orange;
   } */
@@ -21,7 +33,7 @@ header {
     margin-left: 0;
     margin-right: 0;
     /* border: 1px solid red; */
-    background-color: orange;
+    background-color: yellow;
     padding: 50px;
     /* margin: 15px 0; */
   }
