@@ -1,4 +1,5 @@
 <button id="startButton">Wanna guess me?</button>
+
   'use strict';
 
   function YesNo(question) {
@@ -66,7 +67,7 @@
       let score = 0;
 
       for (let i = 0; i < questions.length; i++) {
-          let userAnswer = askYesNoQuestion(questions[i]);
+          let userAnswer = YesNo(questions[i]);
 
           if (userAnswer === (correctAnswers[i] === 'yes')) {
               alert('You Got It!');
@@ -81,11 +82,11 @@
       }
 
       let possibleAnswers = ['Armenia', 'Georgia', 'Montenegro', 'Bosnia','Morocco', 'Turkey', 'Hungary', 'Czech Republic', 'Costa Rica', 'Thailand']; 
-      if (askMultipleChoiceQuestion("Which country did I find unique to vist?", possibleAnswers)) {
+      if (MultiChoice("Which country did I find unique to visit?", possibleAnswers)) {
           score++;
       }
 
       alert(`${userName}, your final score is ${score} out of 7.`);
   }
 
-  document.getElementById('startButton').onclick = startGame;
+  document.getElementById('startButton').onclick = StartGame;
