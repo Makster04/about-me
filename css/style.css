@@ -3,14 +3,25 @@ header {
     margin-top: 20px;
     text-align: center;
   }
-
+  body {
+    background: linear-gradient(#7A6F52, #D4C090);
+  }
   h1 {
     font-size: 2em; /* Adjust the size as needed */
     background-color: blueviolet;
+    border: white solid 7px;
+}
+.topH1 {
+  font-size: 50px; /* Adjust the size as needed */
+  background-color: blueviolet;
+  display: block;
+  text-align: center;
+  border: white solid 10px;
 }
 
   ol {
     background-color: yellow;
+
   }
 
   ul {
@@ -22,6 +33,7 @@ header {
   }
  p {
   font-size: large;
+  border: white solid 5px;
  }
   /* body {
     background-color: orange;
@@ -37,7 +49,21 @@ header {
     padding: 50px;
     /* margin: 15px 0; */
   }
-
+  .mainContainer {
+    text-align: center;
+}
+.olContainer {
+    display: block;
+    text-align: center;
+    list-style-position: inside;
+    border: white solid 5px;
+}
+.ulContainer {
+  display: block;
+  text-align: center;
+  list-style-position: inside;
+  border: white solid 5px;
+}
 #startButton {
     display: block;
     margin: 20px auto;
