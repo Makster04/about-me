@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 header {
     margin-bottom: 10px;
     margin-top: 20px;
@@ -51,3 +52,58 @@ header {
 #startButton:hover {
     background-color: yellow;
 }
+=======
+header {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2em; /* Adjust the size as needed */
+    background-color: blueviolet;
+}
+
+  ol {
+    background-color: yellow;
+  }
+
+  ul {
+    background-color: yellow;
+  }
+
+  main {
+    margin: 40px;
+  }
+ p {
+  font-size: large;
+ }
+  /* body {
+    background-color: orange;
+  } */
+  
+  p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    /* border: 1px solid red; */
+    background-color: yellow;
+    padding: 50px;
+    /* margin: 15px 0; */
+  }
+
+#startButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+#startButton:hover {
+    background-color: yellow;
+}
+>>>>>>> 3626f91604b433ae11792f5fd3016642b66bd030
