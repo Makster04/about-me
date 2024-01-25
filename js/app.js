@@ -1,7 +1,5 @@
 <button id="startButton">Wanna guess me?</button>
 
-  'use strict';
-
   // Function to get Yes/No answers
   function YesNo(question) {
     let answer;
