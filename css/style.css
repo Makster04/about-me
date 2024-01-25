@@ -4,6 +4,9 @@ header {
     text-align: center;
   }
   
+  h1 {
+    font-size: 2em; /* Adjust the size as needed */
+}
   main {
     margin: 40px;
   }
