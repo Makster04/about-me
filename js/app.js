@@ -1,4 +1,4 @@
-<button id="startButton">Wanna guess me?</button>
+
 
   // Function to get Yes/No answers
   function YesNo(question) {
@@ -88,6 +88,6 @@
 
     alert(`${userName}, your final score is ${score} out of 7.`);
   }
+  StartGame()
 
-  // Set the click event for the button
-  document.getElementById('startButton').onclick = StartGame;
+
